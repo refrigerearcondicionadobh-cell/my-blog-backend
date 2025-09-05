@@ -12,7 +12,7 @@ module.exports = ({ env }) => [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://localhost:5173', 'https://climatbh.com.br'],
+      origin: ['http://localhost:5173', 'https://climatbh.com.br', 'https://www.climatbh.com.br'],
       headers: '*',
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
