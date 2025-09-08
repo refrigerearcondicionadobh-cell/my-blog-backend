@@ -1,6 +1,6 @@
 module.exports = ({
   env
-}) => ({
+} ) => ({
   // ... outras configurações de plugins, se houver
 
   cors: {
