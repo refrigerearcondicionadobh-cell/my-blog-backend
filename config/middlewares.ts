@@ -14,7 +14,15 @@ module.exports = [
       },
     },
   },
-  'strapi::cors', 
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://climatbh-site-frontend.onrender.com', 'http://localhost:3000', 'https://climatbh.com.br'],
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      keepHeaderOnError: true,
+    },
+  },
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
@@ -23,5 +31,6 @@ module.exports = [
   'strapi::favicon',
   'strapi::public',
 ];
+
 
 
