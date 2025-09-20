@@ -1,23 +1,13 @@
 module.exports = [
   'strapi::errors',
-  {
-    name: 'strapi::security',
-    config: {
-      contentSecurityPolicy: {
-        useDefaults: true,
-        directives: {
-          'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https:'],
-          'media-src': ["'self'", 'data:', 'blob:', 'https:'],
-          upgradeInsecureRequests: null,
-        },
-      },
-    },
-  },
+  // Removido o 'strapi::security' com CSP para simplificar e evitar conflitos.
+  // A segurança será gerenciada pelo CORS e outras camadas.
+  'strapi::security',
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://climatbh-site-frontend.onrender.com', 'http://localhost:3000', 'https://climatbh.com.br'],
+      enabled: true,
+      origin: ['https://www.climatbh.com.br', 'https://climatbh.com.br', 'http://localhost:3000'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
@@ -31,6 +21,5 @@ module.exports = [
   'strapi::favicon',
   'strapi::public',
 ];
-
 
 
