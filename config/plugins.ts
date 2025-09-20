@@ -1,12 +1,15 @@
 export default ({ env }: { env: { [key: string]: any } }) => ({
   upload: {
     config: {
-      provider: 'local',
+      provider: 'cloudinary',
       providerOptions: {
-        sizeLimit: 1000000, // 1MB em bytes
+        cloud_name: env('CLOUDINARY_NAME'),
+        api_key: env('CLOUDINARY_KEY'),
+        api_secret: env('CLOUDINARY_SECRET'),
       },
-      localServer: {
-        maxage: 300000 // Cache control in milliseconds (5 minutes)
+      actionOptions: {
+        upload: {},
+        delete: {},
       },
     },
   },
