@@ -1,6 +1,15 @@
-module.exports = ({
-  env
-}) => ({
-  // ... outras configurações de plugins, se houver
-  // Remova o bloco 'cors' daqui
+import { Strapi } from '@strapi/strapi';
+
+export default ({ env }: { env: Strapi['config']['environment'] }) => ({
+  upload: {
+    config: {
+      provider: 'local',
+      providerOptions: {
+        sizeLimit: 1000000, // 1MB em bytes
+      },
+      localServer: {
+        maxage: 300000 // Cache control in milliseconds (5 minutes)
+      },
+    },
+  },
 });
