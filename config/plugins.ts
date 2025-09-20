@@ -1,6 +1,4 @@
-import { Strapi } from '@strapi/strapi';
-
-export default ({ env }: { env: Strapi['config']['environment'] }) => ({
+export default ({ env }: { env: (key: string) => any }) => ({
   upload: {
     config: {
       provider: 'cloudinary',
