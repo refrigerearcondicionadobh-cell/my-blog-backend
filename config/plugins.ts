@@ -1,4 +1,6 @@
-export default ({ env }: { env: (key: string) => any }) => ({
+// path: ./config/plugins.ts
+
+export default ({ env }) => ({
   upload: {
     config: {
       provider: 'cloudinary',
